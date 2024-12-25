@@ -1,0 +1,62 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: lightblue; /* Set background color to light blue */
+}
+
+.navbar {
+  background-color: lightblue; /* Change background color to match the background */
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0; /* Ensure the navbar starts from the left */
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Space out items */
+  padding: 0 1rem; /* Add padding to the sides */
+  height: 70px; /* Make the navbar slightly larger */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Align items to the start (left) */
+  width: auto; /* Ensure the ul takes the necessary width */
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.navbar ul li a {
+  display: block;
+  color: black; /* Change text color to black */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar ul li a.active {
+  text-decoration: underline; /* Add underline to the active link */
+}
+.navbar ul li a:hover {
+  background-color: #575757;
+}
+
+.reservation-button {
+  margin-left: auto; /* Push the button to the right */
+  margin-right: 2rem; /* Add margin to the right to create space */
+}
+
+
+.content {
+  padding-top: 80px; /* Add padding to the top to avoid content being hidden behind the navbar */
+  text-align: center;
+}

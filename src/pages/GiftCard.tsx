@@ -1,0 +1,9 @@
+function GiftCard() {
+  return (
+    <div>
+      <h1>GiftCard</h1>
+    </div>
+  );
+}
+
+export default GiftCard;
