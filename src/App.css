@@ -46,6 +46,7 @@ body {
 .navbar ul li a.active {
   text-decoration: underline; /* Add underline to the active link */
 }
+
 .navbar ul li a:hover {
   background-color: #575757;
 }
@@ -55,6 +56,10 @@ body {
   margin-right: 2rem; /* Add margin to the right to create space */
 }
 
+.navbar-image {
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 1rem; /* Add margin to the right to create space */
+}
 
 .content {
   padding-top: 80px; /* Add padding to the top to avoid content being hidden behind the navbar */

@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  background-color: rgba(173, 216, 230, 0.8); /* Light blue with 80% opacity */
+  background-color: lightblue; /* Light blue with 80% opacity */
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -23,7 +23,7 @@ body {
 }
 
 .navbar.expanded {
-  height: 400px; /* Expanded height of the navbar when clicked */
+  height: 500px; /* Expanded height of the navbar when clicked */
 }
 
 .navbar ul {
@@ -49,8 +49,8 @@ body {
 }
 
 .navbar ul li a {
-
-  color: black; /* Change text color to white */
+  font-size: 30px;
+  color: black; /* Change text color to black */
 }
 
 .menu-toggle {
@@ -69,6 +69,11 @@ body {
   top: 12px; /* Position the button at the top */
   right: 40px; /* Position the button to the left of the menu toggle button */
   z-index: 1002; /* Ensure the button appears on top */
+}
+
+.navbar-image {
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 1rem; /* Add margin to the right to create space */
 }
 
 .content {
