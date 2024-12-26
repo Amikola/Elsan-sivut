@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  background-color: lightblue; /* Light blue with 80% opacity */
+  background-color: rgba(173, 216, 230, 0.8); /* Light blue with 80% opacity */
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -33,7 +33,7 @@ body {
   width: 100%; /* Ensure the ul takes the full width */
   background-color: lightblue; /* Different background color for the pop-up menu */
   position: absolute;
-  top: 50px; /* Position below the navbar */
+  top: 75px; /* Position below the navbar */
   left: 0;
   z-index: 1001; /* Ensure the menu appears on top */
 }
@@ -56,18 +56,19 @@ body {
 .menu-toggle {
   display: block; /* Show the menu toggle button on mobile */
   cursor: pointer;
-  font-size: 32px;
-  margin-left: 1rem; /* Move the button to the left */
-  margin-right: auto; /* Ensure the button stays on the left */
+  font-size: 36px; /* Increase font size */
   margin-top: 5px; /* Move the button down */
   z-index: 1002; /* Ensure the button appears on top */
   position: fixed; /* Fix the button position */
   top: 10px; /* Position the button at the top */
+  right: 10px; /* Position the button to the right */
 }
 
 .reservation-button {
-  margin-left: auto; /* Push the button to the right */
-  margin-right: 1rem; /* Add margin to the right to create space */
+  position: fixed; /* Fix the button position */
+  top: 12px; /* Position the button at the top */
+  right: 40px; /* Position the button to the left of the menu toggle button */
+  z-index: 1002; /* Ensure the button appears on top */
 }
 
 .content {
