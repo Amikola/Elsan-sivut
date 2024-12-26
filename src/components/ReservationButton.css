@@ -1,3 +1,5 @@
+/* ReservationButton.css */
+
 .reservation-button {
   background-color: darkblue; /* Set button background color to dark blue */
   color: white; /* Set button text color to white */
@@ -5,8 +7,22 @@
   text-decoration: none; /* Remove underline from the link */
   border-radius: 5px; /* Add rounded corners to the button */
   font-size: 16px; /* Increase font size */
+  position: fixed; /* Fix the button position */
+  top: 10px; /* Position the button at the top */
+  right: 12px; /* Position the button at the right */
+  z-index: 1002; /* Ensure the button appears on top */
 }
 
 .reservation-button:hover {
   background-color: #00008b; /* Darken the button on hover */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .reservation-button {
+    padding: 10px 12px; /* Reduce padding on mobile */
+    font-size: 20px; /* Reduce font size on mobile */
+    top: 10px; /* Position the button at the top */
+    right: 10px; /* Position the button at the right */
+  }
 }

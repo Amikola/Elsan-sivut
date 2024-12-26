@@ -60,3 +60,13 @@ body {
   padding-top: 80px; /* Add padding to the top to avoid content being hidden behind the navbar */
   text-align: center;
 }
+
+@media (min-width: 601px) {
+  .menu-toggle {
+    display: none; /* Hide the menu toggle button on larger screens */
+  }
+
+  .navbar ul {
+    display: flex; /* Show the navbar items on larger screens */
+  }
+}
