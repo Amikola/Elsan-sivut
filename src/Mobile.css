@@ -72,8 +72,11 @@ body {
 }
 
 .navbar-image {
+  position: fixed;
   height: 40px; /* Adjust the height as needed */
   margin-right: 1rem; /* Add margin to the right to create space */
+  top: 12px;
+  z-index: 1002; 
 }
 
 .content {

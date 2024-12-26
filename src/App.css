@@ -15,10 +15,9 @@ body {
   width: 100%;
   z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Space out items */
+  align-items: center; /* Center items vertically */
   padding: 0 1rem; /* Add padding to the sides */
   height: 70px; /* Make the navbar slightly larger */
-  align-items: center; /* Center items vertically */
 }
 
 .navbar ul {
