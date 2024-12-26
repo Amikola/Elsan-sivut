@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import Reservation from './pages/Reservation';
+import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';
 import Contact from './pages/Contact';
 import ReservationButton from './components/ReservationButton';
