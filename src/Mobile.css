@@ -4,10 +4,20 @@ body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: lightblue; /* Set background color to light blue */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: scroll;
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: scroll;
 }
 
 .navbar {
-  background-color: lightblue; /* Light blue with 80% opacity */
+  background-color: lightblue;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -80,8 +90,72 @@ body {
 }
 
 .content {
-  padding-top: 60px; /* Adjust padding to avoid content being hidden behind the navbar on mobile */
+  padding-top: 75px; /* Adjust padding to avoid content being hidden behind the navbar on mobile */
   text-align: center;
+  flex: 1; /* Allow the content to grow and fill the available space */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 600px) {
+  .navbar {
+    height: 60px; /* Adjust height for smaller screens */
+  }
+
+  .navbar.expanded {
+    height: 400px; /* Adjust expanded height for smaller screens */
+  }
+
+  .navbar ul {
+    top: 60px; /* Adjust position for smaller screens */
+  }
+
+  .menu-toggle {
+    font-size: 30px; /* Adjust font size for smaller screens */
+  }
+
+  .reservation-button {
+    top: 10px; /* Adjust position for smaller screens */
+    right: 35px; /* Adjust position for smaller screens */
+  }
+
+  .navbar-image {
+    top: 10px; /* Adjust position for smaller screens */
+  }
+
+  .content {
+    padding-top: 60px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .navbar {
+    height: 70px; /* Adjust height for medium screens */
+  }
+
+  .navbar.expanded {
+    height: 450px; /* Adjust expanded height for medium screens */
+  }
+
+  .navbar ul {
+    top: 70px; /* Adjust position for medium screens */
+  }
+
+  .menu-toggle {
+    font-size: 34px; /* Adjust font size for medium screens */
+  }
+
+  .reservation-button {
+    top: 11px; /* Adjust position for medium screens */
+    right: 38px; /* Adjust position for medium screens */
+  }
+
+  .navbar-image {
+    top: 11px; /* Adjust position for medium screens */
+  }
+
+  .content {
+    padding-top: 70px; /* Adjust padding for medium screens */
+  }
 }
 
 
