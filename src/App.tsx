@@ -7,6 +7,8 @@ import Services from './pages/Services';
 import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';
 import Contact from './pages/Contact';
+import BasicConditions from './pages/BasicConditions';
+import DataProtection from './pages/DataProtection';
 import ReservationButton from './components/ReservationButton';
 import './App.css'; // Default to desktop CSS
 
@@ -69,7 +71,18 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/giftcard" element={<GiftCard />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/dataprotection" element={<DataProtection />} />
+          <Route path="/Basicconditions" element={<BasicConditions/>} />
         </Routes>
+      </div>
+      <div className="bottom-bar">
+        <img src="src/assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
+        <p>Hieroja Ikola Elsa</p>
+        <p>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</p>
+        <p>tmi.ikolaelsa@gmail.com</p>
+        <p>0452684099</p>
+        <NavLink to="/dataprotection">Tietosuoja</NavLink>
+        <NavLink to="/basicconditions">Perusehdot</NavLink>
       </div>
     </Router>
   );
