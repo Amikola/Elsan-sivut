@@ -7,7 +7,7 @@ import Services from './pages/Services';
 import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';
 import Contact from './pages/Contact';
-import BasicConditions from './pages/BasicConditions/BasicConditions';
+import CancelationPolicy from './pages/BasicConditions/CancellationPolicy';
 import ReservationButton from './components/ReservationButton';
 import './App.css'; // Default to desktop CSS
 
@@ -70,7 +70,7 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/giftcard" element={<GiftCard />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/basicconditions" element={<BasicConditions />} />
+          <Route path="/cancelationpolicy" element={<CancelationPolicy />} />
         </Routes>
       </div>
       <div className="bottom-bar">
@@ -82,7 +82,7 @@ function App() {
           <p>0452684099</p>
         </div>
         <div className='bottom-bar-links'>
-        <NavLink to="/basicconditions" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Perusehdot</NavLink>
+        <NavLink to="/cancelationpolicy" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Peruutusehdot</NavLink>
         <a href="https://varaa.timma.fi/dataprotection/hierojaikolaelsa" target="_blank" rel="noopener noreferrer">Tietosuoja</a>
         </div>
       </div>
