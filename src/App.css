@@ -4,6 +4,9 @@ body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: lightblue; /* Set background color to light blue */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .navbar {
@@ -63,6 +66,56 @@ body {
 .content {
   padding-top: 80px; /* Add padding to the top to avoid content being hidden behind the navbar */
   text-align: center;
+  flex: 1; /* Allow the content to grow and fill the available space */
+}
+
+.bottom-bar {
+  background-color: lightblue; /* Change background color to match the background */
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  padding: 1rem; /* Add padding */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.bottom-bar-image {
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 1rem; /* Add margin to the right to create space */
+}
+
+.bottom-bar-text {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  text-align: center;
+}
+
+.bottom-bar-text p {
+  margin: 0.5rem 0; /* Add margin to separate the text */
+  font-size: 1rem;
+  color: black; /* Change text color */
+}
+
+.bottom-bar-text a {
+  display: block;
+  color: black; /* Change text color */
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.bottom-bar-text a.active {
+  text-decoration: underline; /* Add underline to the active link */
+}
+
+.bottom-bar-text a:hover {
+  background-color: #575757;
+}
+
+.bottom-bar-links {
+  display: flex;
+  gap: 1rem; /* Add space between the links */
+  margin-top: 1rem; /* Add margin to the top to separate from the text */
 }
 
 @media (min-width: 601px) {

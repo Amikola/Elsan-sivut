@@ -8,7 +8,6 @@ import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';
 import Contact from './pages/Contact';
 import BasicConditions from './pages/BasicConditions';
-import DataProtection from './pages/DataProtection';
 import ReservationButton from './components/ReservationButton';
 import './App.css'; // Default to desktop CSS
 
@@ -71,18 +70,21 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/giftcard" element={<GiftCard />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/dataprotection" element={<DataProtection />} />
-          <Route path="/Basicconditions" element={<BasicConditions/>} />
+          <Route path="/basicconditions" element={<BasicConditions />} />
         </Routes>
       </div>
       <div className="bottom-bar">
-        <img src="src/assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
-        <p>Hieroja Ikola Elsa</p>
-        <p>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</p>
-        <p>tmi.ikolaelsa@gmail.com</p>
-        <p>0452684099</p>
-        <NavLink to="/dataprotection">Tietosuoja</NavLink>
-        <NavLink to="/basicconditions">Perusehdot</NavLink>
+        <div className="bottom-bar-text">
+          <img src="src/assets/IMG_0418.PNG" alt="Logo" className="bottom-bar-image" />
+          <p>Hieroja Ikola Elsa</p>
+          <a href='https://www.google.com/maps?q=Arolantie+1+As+57+P%C3%B6yt%C3%A4alho,+04410+J%C3%A4rvenp%C3%A4%C3%A4'>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</a>
+          <p>tmi.ikolaelsa@gmail.com</p>
+          <p>0452684099</p>
+        </div>
+        <div className='bottom-bar-links'>
+        <NavLink to="/basicconditions" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Perusehdot</NavLink>
+        <a href="https://varaa.timma.fi/dataprotection/hierojaikolaelsa" target="_blank" rel="noopener noreferrer">Tietosuoja</a>
+        </div>
       </div>
     </Router>
   );
