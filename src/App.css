@@ -67,6 +67,9 @@ body {
   padding-top: 80px; /* Add padding to the top to avoid content being hidden behind the navbar */
   text-align: center;
   flex: 1; /* Allow the content to grow and fill the available space */
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 325px); /* Adjust the height to fill the available space */
 }
 
 .bottom-bar {
@@ -75,8 +78,10 @@ body {
   display: flex;
   flex-direction: column; /* Arrange items in a column */
   align-items: center; /* Center items horizontally */
-  padding: 1rem; /* Add padding */
+  padding-top: 1rem; /* Add padding to the top */
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  position: relative; /* Position relative to the page content */
+  height: 70px; /* Set the height of the bottom bar */
 }
 
 .bottom-bar-image {
@@ -113,9 +118,9 @@ body {
 }
 
 .bottom-bar-links {
+  min-height: 30px; /* Set a minimum height for the links */
   display: flex;
   gap: 1rem; /* Add space between the links */
-  margin-top: 1rem; /* Add margin to the top to separate from the text */
 }
 
 @media (min-width: 601px) {
