@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: lightblue; /* Set background color to light blue */
+  background-color: var(--sky-blue); /* Set background color to light blue */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -17,7 +17,7 @@ html {
 }
 
 .navbar {
-  background-color: lightblue;
+  background-color: var(--sky-blue);
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -41,7 +41,7 @@ html {
   flex-direction: column; /* Stack items vertically on mobile */
   align-items: center; /* Center items horizontally */
   width: 100%; /* Ensure the ul takes the full width */
-  background-color: lightblue; /* Different background color for the pop-up menu */
+  background-color: var(--sky-blue); /* Different background color for the pop-up menu */
   position: absolute;
   top: 75px; /* Position below the navbar */
   left: 0;

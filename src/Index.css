@@ -1,7 +1,13 @@
 /* index.css */
 
+:root {
+  --light-grey: #d3d3d3;
+  --dark-blue: #003366;
+  --sky-blue: #87ceeb;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: lightblue; /* Set background color to light blue */
+  background-color: var(--sky-blue); /* Set background color to sky blue */
 }

@@ -22,14 +22,16 @@ function Reservation() {
     <div className="reservation-container">
       <h1>Ajanvaraus</h1>
       <p>Meillä maksutapana käy kortti, mobilepay sekä erilaiset hyvinvointi edut kuten E-passi, Smartum sekä Edenred.</p>
-      {!iframeLoaded && <p>Ladataan ajanvaraus järjestelmää. Ole hyvä ja odota.</p>}
-      <iframe
-        width="100%"
-        frameBorder="0"
-        src="https://varaa.timma.fi/reservation/hierojaikolaelsa"
-        id="reservationIframe60670"
-        onLoad={handleIframeLoad}
-      ></iframe>
+      <div className="reservation-box">
+        {!iframeLoaded && <p>Ladataan ajanvaraus järjestelmää. Ole hyvä ja odota.</p>}
+        <iframe
+          width="100%"
+          frameBorder="0"
+          src="https://varaa.timma.fi/reservation/hierojaikolaelsa"
+          id="reservationIframe60670"
+          onLoad={handleIframeLoad}
+        ></iframe>
+      </div>
     </div>
   );
 }

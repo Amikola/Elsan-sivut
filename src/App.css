@@ -3,14 +3,14 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: lightblue; /* Set background color to light blue */
+  background-color: var(--sky-blue); /* Set background color to light blue */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .navbar {
-  background-color: lightblue; /* Change background color to match the background */
+  background-color: var(--sky-blue); /* Change background color to match the background */
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -73,7 +73,7 @@ body {
 }
 
 .bottom-bar {
-  background-color: lightblue; /* Change background color to match the background */
+  background-color: var(--sky-blue); /* Change background color to match the background */
   width: 100%;
   display: flex;
   flex-direction: column; /* Arrange items in a column */

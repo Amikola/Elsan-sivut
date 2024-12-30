@@ -1,6 +1,6 @@
 .CancelationPolicy-container {
   padding: 2rem;
-  background-color: #f9f9f9; /* Light grey background */
+  background-color: var(--light-grey); /* Light grey background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   max-width: 800px; /* Maximum width */
@@ -9,12 +9,12 @@
 
 .CancelationPolicy-container h1 {
   font-size: 2rem;
-  color: #333; /* Dark grey text */
+  color: black;
   margin-bottom: 1rem; /* Space below the heading */
 }
 
 .CancelationPolicy-container p {
   font-size: 1.2rem;
-  color: #555; /* Medium grey text */
+  color: black; /* Medium grey text */
   line-height: 1.6; /* Improve readability */
 }

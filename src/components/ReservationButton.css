@@ -1,7 +1,7 @@
 /* ReservationButton.css */
 
 .reservation-button {
-  background-color: darkblue; /* Set button background color to dark blue */
+  background-color: var(--dark-blue); /* Set button background color to dark blue */
   color: white; /* Set button text color to white */
   padding: 14px 20px; /* Add padding to the button */
   text-decoration: none; /* Remove underline from the link */
@@ -14,7 +14,7 @@
 }
 
 .reservation-button:hover {
-  background-color: #00008b; /* Darken the button on hover */
+  background-color: var(--dark-blue); /* Darken the button on hover */
 }
 
 /* Media query for mobile devices */

@@ -22,7 +22,7 @@
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  background-color: var(--light-grey);
   margin-top: 20px;
   text-align: left;
 }
@@ -69,7 +69,7 @@
 .instagram-logo {
   width: 20px;
   height: 20px;
-  color: #007bff;
+  
   margin-right: 8px;
 }
 
