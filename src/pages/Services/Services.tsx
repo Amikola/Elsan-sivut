@@ -21,7 +21,7 @@ function Services() {
           <li><p>Klassinen hieronta</p> <p>70 €</p></li>
           <li><p>Klassinen hieronta</p> <p>90 €</p></li>
           </ul>
-          <NavLink to="/reservation" className="button">Varaa aika!</NavLink>
+          <NavLink to="/reservation" className="button1">Varaa aika!</NavLink>
         </div>
         <div className="Sports">
         <h2>Urheiluhieronta</h2>
@@ -34,7 +34,7 @@ function Services() {
           <li><p>Urheilu hieronta</p> <p>70 €</p></li>
           <li><p>Urheilu hieronta</p> <p>90 €</p></li>
           </ul>
-          <NavLink to="/reservation" className="button">Varaa aika!</NavLink>
+          <NavLink to="/reservation" className="button2">Varaa aika!</NavLink>
         </div>
       </div>
       <CancelationPolicy/>

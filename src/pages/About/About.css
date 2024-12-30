@@ -89,3 +89,8 @@
     text-align: left; /* Align text to the left on larger screens */
   }
 }
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: scroll;
+}

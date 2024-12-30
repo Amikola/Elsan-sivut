@@ -221,3 +221,9 @@ p {
     display: flex;
     justify-content: center;
   }
+  
+  html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: scroll;
+  }
+  

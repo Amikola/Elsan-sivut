@@ -18,3 +18,8 @@
   color: black; /* Medium grey text */
   line-height: 1.6; /* Improve readability */
 }
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: scroll;
+}
