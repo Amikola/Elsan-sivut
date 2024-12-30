@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-do
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Home from './pages/Home';
-import About from './pages/About';
+import About from './pages/About/About';
 import Services from './pages/Services';
 import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';

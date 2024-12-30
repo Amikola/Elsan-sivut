@@ -1,0 +1,91 @@
+.about-container {
+  padding: 20px;
+  max-width: 900px; /* Increased the max-width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.about-box {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile compatibility */
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.about-image-container {
+  flex: 0 0 auto;
+  margin-bottom: 20px; /* Add margin-bottom for spacing on mobile */
+}
+
+.about-image {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-text-container {
+  flex: 1;
+  text-align: center; /* Center text on mobile */
+}
+
+.about-subtitle {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-text {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+}
+
+.instagram-logo {
+  width: 20px;
+  height: 20px;
+  color: #007bff;
+  margin-right: 8px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .about-box {
+    flex-direction: row; /* Change to row for larger screens */
+    align-items: flex-start;
+  }
+
+  .about-image-container {
+    margin-right: 20px; /* Add margin-right for spacing on larger screens */
+    margin-bottom: 0; /* Remove margin-bottom for larger screens */
+  }
+
+  .about-text-container {
+    text-align: left; /* Align text to the left on larger screens */
+  }
+}
