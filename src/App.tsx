@@ -6,7 +6,7 @@ import About from './pages/About/About';
 import Services from './pages/Services';
 import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';
-import Contact from './pages/Contact';
+import Contact from './pages/Contact/Contact';
 import CancelationPolicy from './pages/BasicConditions/CancellationPolicy';
 import ReservationButton from './components/ReservationButton';
 import './App.css'; // Default to desktop CSS

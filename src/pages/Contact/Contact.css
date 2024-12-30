@@ -1,0 +1,71 @@
+.contact-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  background-color: var(--sky-blue); /* Light blue background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.title h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: black; /* Dark blue text */
+}
+
+.title p {
+  font-size: 1.2em;
+  color: black; /* Dark blue text */
+}
+
+.contact-data {
+  background-color: var(--light-grey); /* Light grey background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.contact-data h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: black; /* Dark blue text */
+}
+
+.elsa-data, .dev-data {
+  margin-bottom: 20px;
+}
+
+p, a {
+  color: black; /* Dark blue text */
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .contact-box {
+    flex-direction: row; /* Change to row for larger screens */
+    align-items: flex-start;
+  }
+
+  .contact-section {
+    margin-right: 20px; /* Add margin-right for spacing on larger screens */
+    margin-bottom: 0; /* Remove margin-bottom for larger screens */
+  }
+
+  .contact-text-container {
+    text-align: left; /* Align text to the left on larger screens */
+  }
+}
