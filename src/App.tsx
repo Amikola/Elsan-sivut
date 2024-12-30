@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import Reservation from './pages/Reservation/Reservation';
