@@ -1,0 +1,223 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--sky-blue);
+  color: black;
+}
+
+h1, h2 {
+  color: black;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+/* Title Section */
+.Title {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  align-items: center;
+  background-color: var(--sky-blue);
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-right: 300px;
+  padding-left: 300px;
+  border-radius: 10px;
+  margin-bottom: 2em;
+  text-align: left; /* Align text to the left */
+}
+
+.Title .text {
+  flex: 1;
+  padding-left: 2em;
+}
+
+.Title h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: var(--dark-blue);
+}
+
+.Title p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: black;
+}
+
+.Title .button {
+  display: inline-block;
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.Title .button:hover {
+  background-color: #002244;
+}
+
+.Title img {
+  width: 35%; /* Increase the size of the logo */
+  height: auto;
+  border-radius: 10px;
+  margin-left: 2em;
+}
+
+/* Services Section */
+.Services {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.Services h1 {
+  font-size: 2.5em;
+  margin: 1.5em 0;
+  width: 100%;
+  color: var(--dark-blue);;
+}
+
+.Services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Sports {
+  background: var(--light-grey);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 45%;
+  margin: 1em;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.Classic {
+    background: var(--light-grey);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 45%;
+    margin: 1em;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+    min-height: 811.95px;
+    max-width: 800px;
+  }
+
+.Sports img {
+  width: 40%;
+  height: 40%;
+}
+
+.Classic img{
+    width: 40%;
+    height: 40%;
+    padding-top: 50px;
+
+  }
+
+.Sports h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.Classic h2 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    padding-top: 50px;;
+  }
+
+
+.Sports p, .Classic p {
+  padding: 0 1em;
+  font-size: 1em;
+  color: #666;
+}
+
+.Sports .button, .Classic .button {
+  margin: 1em auto;
+  display: inline-block;
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 0.5em 1.2em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.Sports .button:hover, .Classic .button:hover {
+  background-color: #002244;
+}
+
+/* Socials Section */
+.Socials {
+    text-align: center;
+    margin: 2em 0;
+    padding: 2em;
+    background-color: var(--light-grey);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Socials h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: var(--dark-blue);
+    align-items: center;
+  }
+  
+  .Socials p {
+    font-size: 1.5em; /* Make the text bigger */
+    margin-bottom: 1em;
+    color: black;
+  }
+  
+  .Socials .Links {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    justify-content: center; /* Center the items */
+    align-items: center; /* Center items vertically */
+    padding: 1em;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 2em;
+  }
+  
+  .Socials .Links a {
+    display: block;
+    margin: 0.5em 0;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1.5em; /* Make the links bigger */
+  }
+  
+  .Socials .Links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Instagram Embed */
+  .instagram-section {
+    padding: 2em 0;
+    background-color: #ececec;
+    display: flex;
+    justify-content: center;
+  }
