@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Home from './pages/Home';
 import About from './pages/About/About';
-import Services from './pages/Services';
+import Services from './pages/Services/Services';
 import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard';
 import Contact from './pages/Contact/Contact';
-import CancelationPolicy from './pages/BasicConditions/CancellationPolicy';
+import CancelationPolicy from './pages/CancelationPolicy/CancellationPolicy';
 import ReservationButton from './components/ReservationButton';
 import './App.css'; // Default to desktop CSS
 
