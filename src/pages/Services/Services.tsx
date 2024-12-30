@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Services() {
   return (
     <div>
-      <div className="Title">
+      <div className="TitleServices">
       <h1>Palvelut</h1>
       <p>Tarjolla eri pituisia hieronta-aikoja asiakkaan toiveiden mukaan. Valitsen tekniikat aina asiakkaan tarpeiden ja toiveiden perusteella. </p>
       </div>
