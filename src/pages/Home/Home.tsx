@@ -1,11 +1,15 @@
 import { NavLink } from "react-router-dom";
 import {InstagramEmbed } from 'react-social-media-embed';
 import './Home.css';
+import { useMediaQuery } from 'react-responsive';
 
 function Home() {
+
+  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
+
   return (
     <div>
-      <div className="Title">
+      <div className="TitleHome">
         <div className="Text">
         <h1>Tervetuloa hierontaan.</h1>
         <p>Meiltä saat hierontaa juuri omiin tarpeisiisi, halusit sitten rentoutua, vähentää lihaskipuja, parantaa liikkuvuutta tai palautua nopeammin.</p>
@@ -33,7 +37,9 @@ function Home() {
       <div className="Socials">
       <h1>Seuraa meitä</h1>
       <p>Facebookissa ja Instagramissa!</p>
-    <InstagramEmbed url="https://www.instagram.com/hierojaelsa?igsh=MXBmcjl1bzFmM3ZobA%3D%3D&utm_source=qr" width={800} />
+      <InstagramEmbed 
+      url="https://www.instagram.com/hierojaelsa?igsh=MXBmcjl1bzFmM3ZobA%3D%3D&utm_source=qr" 
+      width={isMobile ? 400 : 800}/>
     <div className="Links">
     <a href="https://www.facebook.com/profile.php?id=61565476470926"> Facebook</a>
     <a href="https://www.facebook.com/profile.php?id=61565476470926"> Instagram</a>
