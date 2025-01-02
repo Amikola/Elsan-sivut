@@ -7,19 +7,20 @@ import Services from './pages/Services/Services';
 import Reservation from './pages/Reservation/Reservation';
 import GiftCard from './pages/GiftCard/GiftCard';
 import Contact from './pages/Contact/Contact';
-import CancelationPolicy from './pages/CancelationPolicy/CancellationPolicy';
+import CancelationPolicy from './pages/CancelationPolicy/CancelationPolicy';
 import ReservationButton from './components/ReservationButton';
-import './App.css'; // Default to desktop CSS
 import ArrivalGuide from './pages/ArrivalGuide/ArrivalGuide';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 810px)' });
 
   useEffect(() => {
     if (isMobile) {
+      console.log('Loading Mobile.css');
       import('./Mobile.css');
     } else {
+      console.log('Loading App.css');
       import('./App.css');
     }
   }, [isMobile]);
@@ -41,7 +42,7 @@ function App() {
           </div>
         )}
         <a href="/">
-          <img src="src/assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
+          <img src="assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
         </a>
         <ul className={isMobile && menuOpen ? 'show' : ''}>
           <li>
@@ -54,10 +55,10 @@ function App() {
             <NavLink to="/reservation" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Ajanvaraus</NavLink>
           </li>
           <li>
-            <NavLink to="/arrivalGuide" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Saapumisohjeet</NavLink>
+            <NavLink to="/arrivalguide" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Saapumisohjeet</NavLink>
           </li>
           <li>
-            <NavLink to="/giftcard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Lahjakorti</NavLink>
+            <NavLink to="/giftcard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Lahjakortti</NavLink>
           </li>
           <li>
             <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Meistä</NavLink>
@@ -82,7 +83,7 @@ function App() {
       </div>
       <div className="bottom-bar">
         <div className="bottom-bar-text">
-          <NavLink to="/"><img src="src/assets/IMG_0418.PNG" alt="Logo" className="bottom-bar-image" /></NavLink>
+          <NavLink to="/"><img src="assets/IMG_0418.PNG" alt="Logo" className="bottom-bar-image" /></NavLink>
           <p>Hieroja Ikola Elsa</p>
           <a href='https://www.google.com/maps?q=Arolantie+1+As+57+P%C3%B6yt%C3%A4alho,+04410+J%C3%A4rvenp%C3%A4%C3%A4'>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</a>
           <p>tmi.ikolaelsa@gmail.com</p>

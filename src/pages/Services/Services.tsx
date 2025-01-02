@@ -1,4 +1,4 @@
-import CancelationPolicy from "../CancelationPolicy/CancellationPolicy";
+import CancelationPolicy from "../CancelationPolicy/CancelationPolicy";
 import './Services.css';
 import { NavLink } from "react-router-dom";
 

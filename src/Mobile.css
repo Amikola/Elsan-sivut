@@ -95,9 +95,39 @@ html {
   flex: 1; /* Allow the content to grow and fill the available space */
 }
 
+/* Media queries for different screen sizes */
+@media (max-width: 600px) {
+  .navbar {
+    height: 60px; /* Adjust height for smaller screens */
+  }
 
+  .navbar.expanded {
+    height: 650px; /* Adjust expanded height for smaller screens */
+  }
 
-@media (min-width: 800px) and (max-width: 900px) {
+  .navbar ul {
+    top: 60px; /* Adjust position for smaller screens */
+  }
+
+  .menu-toggle {
+    font-size: 30px; /* Adjust font size for smaller screens */
+  }
+
+  .reservation-button {
+    top: 10px; /* Adjust position for smaller screens */
+    right: 35px; /* Adjust position for smaller screens */
+  }
+
+  .navbar-image {
+    top: 10px; /* Adjust position for smaller screens */
+  }
+
+  .content {
+    padding-top: 60px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
   .navbar {
     height: 70px; /* Adjust height for medium screens */
   }
@@ -128,4 +158,54 @@ html {
   }
 }
 
+.bottom-bar {
+  background-color: var(--sky-blue); /* Change background color to match the background */
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  padding-top: 1rem; /* Add padding to the top */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  position: relative; /* Position relative to the page content */
+  height: 70px; /* Set the height of the bottom bar */
+}
+
+.bottom-bar-image {
+  height: 40px; /* Adjust the height as needed */
+  margin-right: 1rem; /* Add margin to the right to create space */
+}
+
+.bottom-bar-text {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center; /* Center items horizontally */
+  text-align: center;
+}
+
+.bottom-bar-text p {
+  margin: 0.5rem 0; /* Add margin to separate the text */
+  font-size: 1rem;
+  color: black; /* Change text color */
+}
+
+.bottom-bar-text a {
+  display: block;
+  color: black; /* Change text color */
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.bottom-bar-text a.active {
+  text-decoration: underline; /* Add underline to the active link */
+}
+
+.bottom-bar-text a:hover {
+  background-color: #575757;
+}
+
+.bottom-bar-links {
+  min-height: 30px; /* Set a minimum height for the links */
+  display: flex;
+  gap: 1rem; /* Add space between the links */
+}
 

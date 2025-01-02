@@ -13,8 +13,8 @@ function ArrivalGuide() {
         </div>
 
         <div className="ArrivalImages">
-        <img src="src/assets/ReittiElsa.png"></img>
-        <img src="src/assets/ElsaOvi.png"></img>
+        <img src="assets/ReittiElsa.png"></img>
+        <img src="assets/ElsaOvi.png"></img>
         </div>
       </div>
     );
