@@ -1,0 +1,89 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--sky-blue);
+  color: black;
+}
+
+h1 {
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+/* Arrival Content Section */
+.ArrivalContent {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--light-grey);
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
+
+.ArrivalText {
+  margin-bottom: 1em;
+}
+
+.ArrivalText p {
+  font-size: 1.2em;
+  color: black;
+}
+
+.ArrivalText a {
+  color: var(--dark-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ArrivalText a:hover {
+  text-decoration: underline;
+}
+
+.ParkingText {
+  font-size: 1.2em;
+  color: black;
+  margin-top: 1em;
+}
+
+/* Arrival Images Section */
+.ArrivalImages {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ArrivalImages img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for mobile screens */
+@media (max-width: 767px) {
+  .ArrivalContent {
+    padding: 10px;
+  }
+
+  .ArrivalImages {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ArrivalImages img {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  .ArrivalContent {
+    padding: 10px;
+  }
+}
