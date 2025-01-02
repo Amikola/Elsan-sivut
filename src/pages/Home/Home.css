@@ -70,32 +70,16 @@ p {
   margin-left: 2em;
 }
 
-/* Services Section */
-.Services {
-  text-align: center;
+.ServicesHome {
   margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the top */
 }
 
-.Services h1 {
-  font-size: 2.5em;
-  margin: 1.5em 0;
-  width: 100%;
-  color: var(--dark-blue);
-}
 
-.Sports {
-  background: var(--light-grey);
-  border-radius: 10px;
-  overflow: hidden;
-  width: 45%;
-  margin: 1em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  height: 100%; /* Ensure both boxes have the same height */
-  max-width: 800px;
-}
-
- .Classic {
+.Sports, .Classic {
   background: var(--light-grey);
   border-radius: 10px;
   overflow: hidden;
@@ -103,23 +87,24 @@ p {
   margin: 1em;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 100%; /* Ensure both boxes have the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto; /* Ensure both boxes have the same height */
   max-width: 800px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  min-height: 812px;
+  align-items: center; 
 }
 
-.Sports {
-  margin-left: auto;
-}
-
-.Classic {
-  margin-right: auto;
-}
-
-.Sports img, .Classic img {
+.Sports img {
   width: 40%;
   height: 40%;
+  
+}
+
+.Classic img {
+  width: 40%;
+  height: 40%
 }
 
 .Sports h2, .Classic h2 {
@@ -133,7 +118,6 @@ p {
 }
 
 .Classic p {
-  padding: 0 1em;
   font-size: 1.5em;
 }
 
@@ -154,100 +138,108 @@ p {
 
 /* Socials Section */
 .Socials {
-    text-align: center;
-    margin: 2em 0;
-    padding: 2em;
-    background-color: var(--light-grey);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .Socials h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: var(--dark-blue);
-    align-items: center;
-  }
-  
-  .Socials p {
-    font-size: 1.5em; /* Make the text bigger */
-    margin-bottom: 1em;
-    color: black;
-  }
-  
-  .Socials .Links {
-    display: flex;
-    flex-direction: row; /* Align items horizontally */
-    justify-content: center; /* Center the items */
-    align-items: center; /* Center items vertically */
-    padding: 1em;
-    background-color: var(--dark-blue);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-left: 2em;
-  }
-  
-  .Socials .Links a {
-    display: block;
-    margin: 0.5em 0;
-    color: white;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    font-size: 1.5em; /* Make the links bigger */
-  }
-  
-  .Socials .Links a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Instagram Embed */
-  .instagram-section {
-    padding: 2em 0;
-    background-color: var(--light-grey);
-    display: flex;
-    justify-content: center;
-  }
-  
-  html {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: scroll;
-  }
-  
-  /* Media query for mobile screens */
-  @media (max-width: 767px) {
-    .TitleHome {
-      flex-direction: column; /* Stack items vertically */
-      padding: 50px 20px; /* Adjust padding for mobile */
-    }
-  
-    .TitleHome img {
-      width: 80%; /* Adjust logo size for mobile */
-      margin: 20px 0; /* Add margin for spacing */
-      padding-top: 50px;
-    }
-  
-    .Services-container {
-      flex-direction: column; /* Stack services vertically */
-    }
-  
-    .Sports, .Classic {
-      width: 90%; /* Adjust width for mobile */
-      margin: 1em auto; /* Center services */
-    }
-  
-    .Socials .Links {
-      flex-direction: column; /* Stack links vertically */
-      margin-left: 0; /* Remove left margin */
-      margin-top: 1em; /* Add top margin */
-    }
-  
-    .Socials .Links a {
-      margin: 0.5em 0; /* Adjust margin for links */
-    }
+  text-align: center;
+  margin: 2em 0;
+  padding: 2em;
+  background-color: var(--light-grey);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-   
+.Socials h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: var(--dark-blue);
+  align-items: center;
+}
+
+.Socials p {
+  font-size: 1.5em; /* Make the text bigger */
+  margin-bottom: 1em;
+  color: black;
+}
+
+.Socials .Links {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center the items */
+  align-items: center; /* Center items vertically */
+  padding: 1em;
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 2em;
+}
+
+.Socials .Links a {
+  display: block;
+  margin: 0.5em 0;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-size: 1.5em; /* Make the links bigger */
+}
+
+.Socials .Links a:hover {
+  text-decoration: underline;
+}
+
+/* Instagram Embed */
+.instagram-section {
+  padding: 2em 0;
+  background-color: var(--light-grey);
+  display: flex;
+  justify-content: center;
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: scroll;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 767px) {
+  .TitleHome {
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px; /* Adjust padding for mobile */
   }
-  
+
+  .TitleHome img {
+    width: 80%; /* Adjust logo size for mobile */
+    margin: 20px 0; /* Add margin for spacing */
+  }
+
+  .ServicesHome {
+    flex-direction: column; /* Stack services vertically */
+    align-items: center; /* Center services */
+    padding: 0 20px; /* Add padding for mobile */
+  }
+
+  .Sports, .Classic {
+    width: 100%; /* Adjust width for mobile */
+    margin: 1em 0; /* Center services */
+    min-height: auto; /* Adjust height for mobile */
+  }
+
+  .Socials {
+    padding: 1em; /* Adjust padding for mobile */
+  }
+
+  .Socials .Links {
+    flex-direction: column; /* Stack links vertically */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 1em; /* Add top margin */
+  }
+
+  .Socials .Links a {
+    margin: 0.5em 0; /* Adjust margin for links */
+  }
+
+  .instagram-section {
+    padding: 1em 0; /* Adjust padding for mobile */
+    width: 100%; /* Make the section full width */
+  }
+}

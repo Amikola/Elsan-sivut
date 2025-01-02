@@ -17,8 +17,7 @@ function Home() {
         </div>
         <img src="src/assets/IMG_0418.PNG" alt="Logo"></img>
         </div>
-      <div className="Services">
-        <h1>Palvelut</h1>
+      <div className="ServicesHome">
         
         <div className="Sports">
           <img src="src/assets/IMG_7104.jpg" alt="Kuva"></img>
@@ -34,6 +33,10 @@ function Home() {
           <NavLink to="/reservation" className="button">Varaa aika!</NavLink>  
         </div>
       </div>
+      
+
+
+
       <div className="Socials">
       <h1>Seuraa meitä</h1>
       <p>Facebookissa ja Instagramissa!</p>
