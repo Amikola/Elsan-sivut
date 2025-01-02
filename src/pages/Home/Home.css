@@ -80,13 +80,7 @@ p {
   font-size: 2.5em;
   margin: 1.5em 0;
   width: 100%;
-  color: var(--dark-blue);;
-}
-
-.Services-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  color: var(--dark-blue);
 }
 
 .Sports {
@@ -95,54 +89,52 @@ p {
   overflow: hidden;
   width: 45%;
   margin: 1em;
-  text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  vertical-align: top;
+  height: 100%; /* Ensure both boxes have the same height */
+  max-width: 800px;
+}
+
+ .Classic {
+  background: var(--light-grey);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 45%;
+  margin: 1em;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ensure both boxes have the same height */
+  max-width: 800px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.Sports {
+  margin-left: auto;
 }
 
 .Classic {
-    background: var(--light-grey);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 45%;
-    margin: 1em;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    vertical-align: top;
-    min-height: 811.95px;
-    max-width: 800px;
-  }
+  margin-right: auto;
+}
 
-.Sports img {
+.Sports img, .Classic img {
   width: 40%;
   height: 40%;
 }
 
-.Classic img{
-    width: 40%;
-    height: 40%;
-    padding-top: 50px;
-
-  }
-
-.Sports h2 {
+.Sports h2, .Classic h2 {
   font-size: 1.5em;
   margin: 0.5em 0;
 }
 
-.Classic h2 {
-    font-size: 1.5em;
-    margin: 0.5em 0;
-    padding-top: 50px;;
-  }
-
-
 .Sports p, .Classic p {
   padding: 0 1em;
   font-size: 1em;
-  color: #666;
+}
+
+.Classic p {
+  padding: 0 1em;
+  font-size: 1.5em;
 }
 
 .Sports .button, .Classic .button {
@@ -242,7 +234,7 @@ p {
     }
   
     .Sports, .Classic {
-      width: 95%; /* Adjust width for mobile */
+      width: 90%; /* Adjust width for mobile */
       margin: 1em auto; /* Center services */
     }
   
