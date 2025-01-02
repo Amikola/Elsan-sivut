@@ -1,0 +1,24 @@
+.giftCardInfo {
+  background-color: var(--light-grey);
+  padding: 20px; /* Add padding to make the container bigger */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+
+.giftCardInfo iframe {
+  width: 100%;
+  height: 100%; /* Ensure the iframe has a fixed height */
+  border: none;
+  border-radius: 8px; /* Optional: Add rounded corners to match the container */
+}
+
+.giftCardContainer h1 {
+  font-size: 2em;
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+}
+
+.giftCardContainer p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}

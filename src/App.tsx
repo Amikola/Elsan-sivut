@@ -5,7 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import Reservation from './pages/Reservation/Reservation';
-import GiftCard from './pages/GiftCard';
+import GiftCard from './pages/GiftCard/GiftCard';
 import Contact from './pages/Contact/Contact';
 import CancelationPolicy from './pages/CancelationPolicy/CancellationPolicy';
 import ReservationButton from './components/ReservationButton';
