@@ -1,3 +1,25 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--sky-blue);
+  color: black;
+}
+
+h1, h2 {
+  color: black;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+/* Title Section */
 .TitleServices {
   text-align: center;
   margin-top: 30px;
@@ -7,14 +29,15 @@
   align-self: center;
 }
 
-.TitleServices  h1 {
+.TitleServices h1 {
   font-size: 2.5em;
 }
 
-.TitleServices  p {
+.TitleServices p {
   font-size: 1.2em;
 }
 
+/* Services Section */
 .Services {
   display: flex;
   flex-direction: column;
@@ -22,41 +45,31 @@
   padding: 20px;
 }
 
-.Sports {
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 40px;
+.SportsServices  {
+  background-color: var(--light-grey);
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-    background-color: var(--light-grey);
-
 }
 
-.Classical {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 40px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-      background-color: var(--light-grey);
-           
-  }
-
+.ClassicalServices  {
+  background-color: var(--light-grey);
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+}
 
 .Services h2 {
   font-size: 2em;
   margin-bottom: 10px;
 }
 
-.Sports p {
+.Sports p, .Classical p {
   font-size: 1.2em;
-  color:black;
+  color: black;
 }
 
 .Classical p {
-  font-size: 1.2em;
   margin: 27px;
   margin-bottom: 60px;
 }
@@ -78,35 +91,24 @@
 }
 
 
-.Services li p:first-child::after {
-    content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "}
 
+.button1, .button2 {
+  background-color: var(--dark-blue); /* Set button background color to dark blue */
+  color: white; /* Set button text color to white */
+  padding: 14px 20px; /* Add padding to the button */
+  text-decoration: none; /* Remove underline from the link */
+  border-radius: 5px; /* Add rounded corners to the button */
+  font-size: 14px; /* Increase font size */
+}
 
-
-.button1 {
-    background-color: var(--dark-blue); /* Set button background color to dark blue */
-      color: white; /* Set button text color to white */
-      padding: 14px 20px; /* Add padding to the button */
-      text-decoration: none; /* Remove underline from the link */
-      border-radius: 5px; /* Add rounded corners to the button */
-      font-size: 14px; /* Increase font size */
-  }
-
-  .button2 {
-    background-color: var(--dark-blue); /* Set button background color to dark blue */
-      color: white; /* Set button text color to white */
-      padding: 14px 20px; /* Add padding to the button */
-      text-decoration: none; /* Remove underline from the link */
-      border-radius: 5px; /* Add rounded corners to the button */
-      font-size: 14px; /* Increase font size */
-  }
-    
-
-button:hover {
-  background-color: var(--dark-blue); /* Darken the button on hover */
+.button1:hover, .button2:hover {
+  background-color: #002244; /* Darken the button on hover */
 }
 
 
+.Services li p:first-child::after {
+  content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   ";
+}
 
 /* Media query for larger screens */
 @media (min-width: 768px) {
@@ -120,16 +122,36 @@ button:hover {
     width: 48%;
   }
 
-  .button {
-    padding: 10px 12px; /* Reduce padding on mobile */
-    font-size: 20px; /* Reduce font size on mobile */
+  .button1, .button2 {
+    padding: 10px 12px; /* Reduce padding on larger screens */
+    font-size: 20px; /* Increase font size on larger screens */
   }
 }
 
 /* Media query for mobile screens */
 @media (max-width: 767px) {
+  .Services {
+    flex-direction: column; /* Stack services vertically */
+    align-items: center;
+  }
+
+  .ClassicalServices{
+    margin-bottom: 20px;
+  }
+
+  .Services > div {
+    width: 100%;
+  }
+
   .Services li p:first-child::after {
-    content: " . . . . . . .";
+    content: " . . . . . . . . .";
+  }
+  
+
+  .button1, .button2 {
+    padding: 12px 16px; /* Adjust padding on mobile */
+    font-size: 16px; /* Adjust font size on mobile */
   }
 }
+
 
