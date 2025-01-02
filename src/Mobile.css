@@ -95,39 +95,9 @@ html {
   flex: 1; /* Allow the content to grow and fill the available space */
 }
 
-/* Media queries for different screen sizes */
-@media (max-width: 600px) {
-  .navbar {
-    height: 60px; /* Adjust height for smaller screens */
-  }
 
-  .navbar.expanded {
-    height: 650px; /* Adjust expanded height for smaller screens */
-  }
 
-  .navbar ul {
-    top: 60px; /* Adjust position for smaller screens */
-  }
-
-  .menu-toggle {
-    font-size: 30px; /* Adjust font size for smaller screens */
-  }
-
-  .reservation-button {
-    top: 10px; /* Adjust position for smaller screens */
-    right: 35px; /* Adjust position for smaller screens */
-  }
-
-  .navbar-image {
-    top: 10px; /* Adjust position for smaller screens */
-  }
-
-  .content {
-    padding-top: 60px; /* Adjust padding for smaller screens */
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 800px) and (max-width: 900px) {
   .navbar {
     height: 70px; /* Adjust height for medium screens */
   }

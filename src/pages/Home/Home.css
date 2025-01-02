@@ -201,7 +201,7 @@ html {
 }
 
 /* Media query for mobile screens */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .TitleHome {
     flex-direction: column; /* Stack items vertically */
     padding: 20px; /* Adjust padding for mobile */

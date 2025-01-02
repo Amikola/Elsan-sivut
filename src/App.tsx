@@ -14,7 +14,7 @@ import ArrivalGuide from './pages/ArrivalGuide/ArrivalGuide';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
 
   useEffect(() => {
     if (isMobile) {

@@ -111,7 +111,7 @@ p {
 }
 
 /* Media query for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .Services {
     flex-direction: row;
     flex-wrap: wrap;
@@ -129,7 +129,7 @@ p {
 }
 
 /* Media query for mobile screens */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .Services {
     flex-direction: column; /* Stack services vertically */
     align-items: center;

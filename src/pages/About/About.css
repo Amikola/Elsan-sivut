@@ -74,7 +74,7 @@
 }
 
 /* Media query for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .about-box {
     flex-direction: row; /* Change to row for larger screens */
     align-items: flex-start;
