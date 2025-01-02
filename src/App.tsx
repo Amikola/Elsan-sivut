@@ -10,6 +10,7 @@ import Contact from './pages/Contact/Contact';
 import CancelationPolicy from './pages/CancelationPolicy/CancellationPolicy';
 import ReservationButton from './components/ReservationButton';
 import './App.css'; // Default to desktop CSS
+import ArrivalGuide from './pages/ArrivalGuide/ArrivalGuide';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,6 +54,9 @@ function App() {
             <NavLink to="/reservation" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Ajanvaraus</NavLink>
           </li>
           <li>
+            <NavLink to="/arrivalGuide" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Saapumisohjeet</NavLink>
+          </li>
+          <li>
             <NavLink to="/giftcard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Lahjakorti</NavLink>
           </li>
           <li>
@@ -73,6 +77,7 @@ function App() {
           <Route path="/giftcard" element={<GiftCard />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cancelationpolicy" element={<CancelationPolicy />} />
+          <Route path="/arrivalguide" element={<ArrivalGuide />} />
         </Routes>
       </div>
       <div className="bottom-bar">

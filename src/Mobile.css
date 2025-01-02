@@ -102,7 +102,7 @@ html {
   }
 
   .navbar.expanded {
-    height: 600px; /* Adjust expanded height for smaller screens */
+    height: 650px; /* Adjust expanded height for smaller screens */
   }
 
   .navbar ul {
@@ -133,7 +133,7 @@ html {
   }
 
   .navbar.expanded {
-    height: 600px; /* Adjust expanded height for medium screens */
+    height: 650px; /* Adjust expanded height for medium screens */
   }
 
   .navbar ul {
