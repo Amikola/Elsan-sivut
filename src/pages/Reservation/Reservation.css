@@ -1,4 +1,24 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
 
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--sky-blue); /* Set background color to light blue */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.reservation-container {
+  flex: 1; /* Allow the reservation container to take up remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
 
 .reservation-container h1 {
   font-size: 2rem;
@@ -24,9 +44,4 @@
   padding: 20px; /* Add padding around the iframe */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-html {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  overflow-y: scroll;
 }

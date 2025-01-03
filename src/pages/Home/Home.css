@@ -5,10 +5,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--sky-blue);
   color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2 {
@@ -193,6 +202,8 @@ p {
   background-color: var(--light-grey);
   display: flex;
   justify-content: center;
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 html {

@@ -1,8 +1,26 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--sky-blue); /* Set background color to light blue */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .contact-container {
+  flex: 1; /* Allow the contact container to take up remaining space */
   padding: 20px;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 .title {
@@ -68,9 +86,4 @@ a:hover {
   .contact-text-container {
     text-align: left; /* Align text to the left on larger screens */
   }
-}
-
-html {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  overflow-y: scroll;
 }

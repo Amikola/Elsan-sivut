@@ -5,10 +5,18 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--sky-blue);
   color: black;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2 {
@@ -43,20 +51,16 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  flex: 1; /* Allow the services section to take up remaining space */
 }
 
-.SportsServices  {
+.SportsServices, .ClassicalServices {
   background-color: var(--light-grey);
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 20px;
-}
-
-.ClassicalServices  {
-  background-color: var(--light-grey);
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 20px;
+  margin-bottom: 20px; /* Add margin between service sections */
 }
 
 .Services h2 {
@@ -90,8 +94,6 @@ p {
   margin: 0;
 }
 
-
-
 .button1, .button2 {
   background-color: var(--dark-blue); /* Set button background color to dark blue */
   color: white; /* Set button text color to white */
@@ -104,7 +106,6 @@ p {
 .button1:hover, .button2:hover {
   background-color: #002244; /* Darken the button on hover */
 }
-
 
 .Services li p:first-child::after {
   content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   ";
@@ -147,7 +148,6 @@ p {
     content: " . . . . . . . . .";
   }
   
-
   .button1, .button2 {
     padding: 12px 16px; /* Adjust padding on mobile */
     font-size: 16px; /* Adjust font size on mobile */

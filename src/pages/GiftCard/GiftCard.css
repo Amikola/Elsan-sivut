@@ -1,9 +1,30 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--sky-blue); /* Set background color to light blue */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.giftCardContainer {
+  flex: 1; /* Allow the gift card container to take up remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
 .giftCardInfo {
   background-color: var(--light-grey);
   padding: 20px; /* Add padding to make the container bigger */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
-
 
 .giftCardInfo iframe {
   width: 100%;
