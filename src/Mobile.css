@@ -30,10 +30,12 @@ html {
   height: 75px; /* Default height of the navbar */
   align-items: center; /* Center items vertically */
   transition: height 0.3s ease; /* Smooth transition for height change */
+  z-index: 1000; /* Ensure the navbar appears on top */
 }
 
 .navbar.expanded {
   height: 600px; /* Expanded height of the navbar when clicked */
+  z-index: 1000; /* Ensure the navbar appears on top */
 }
 
 .navbar ul {
@@ -108,10 +110,12 @@ html {
 @media (max-width: 600px) {
   .navbar {
     height: 60px; /* Adjust height for smaller screens */
+    z-index: 1000; /* Ensure the navbar appears on top */
   }
 
   .navbar.expanded {
     height: 650px; /* Adjust expanded height for smaller screens */
+    z-index: 1000; /* Ensure the navbar appears on top */
   }
 
   .navbar ul {
@@ -139,10 +143,12 @@ html {
 @media (min-width: 601px) and (max-width: 900px) {
   .navbar {
     height: 70px; /* Adjust height for medium screens */
+    z-index: 1000; /* Ensure the navbar appears on top */
   }
 
   .navbar.expanded {
     height: 650px; /* Adjust expanded height for medium screens */
+    z-index: 1000; /* Ensure the navbar appears on top */
   }
 
   .navbar ul {
