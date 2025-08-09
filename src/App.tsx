@@ -58,9 +58,6 @@ function App() {
             <NavLink to="/arrivalguide" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Saapumisohjeet</NavLink>
           </li>
           <li>
-            <NavLink to="/giftcard" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Lahjakortti</NavLink>
-          </li>
-          <li>
             <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Meistä</NavLink>
           </li>
           <li>
