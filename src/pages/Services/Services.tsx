@@ -40,29 +40,12 @@ function Services() {
               <h2>Klassinen hieronta</h2>
               <p>Klassinen hieronta stressin ja jännitysten lievitykseen, sekä hyvinvoinnin työkaluna.</p>
               <ul>
-                <li><p>Klassinen hieronta (30 min)</p> <p>40 €</p></li>
-                <li><p>Klassinen hieronta (45 min)</p> <p>50 €</p></li>
-                <li><p>Klassinen hieronta (60 min)</p> <p>60 €</p></li>
-                <li><p>Klassinen hieronta (75 min)</p> <p>70 €</p></li>
-                <li><p>Klassinen hieronta (90 min)</p> <p>80 €</p></li>
-                <li><p>Klassinen hieronta (120 min)</p> <p>100 €</p></li>
+                <li><p>Hieronta 30 min</p> <p>37 €</p></li>
+                <li><p>Hieronta 45 min</p> <p>52 €</p></li>
+                <li><p>Hieronta 60 min</p> <p>67 €</p></li>
+                <li><p>Lisäaika +15 min</p> <p>15 €</p></li>
               </ul>
               <NavLink to="/reservation" className="button1">
-                Varaa aika!
-              </NavLink>
-            </div>
-            <div className="SportsServices">
-              <h2>Urheiluhieronta</h2>
-              <p>Urheiluhieronta sopii kaikille aktiivisille ihmisille, kilpaurheilijoista tavalliseen arkiliikkujaan. Vastaanotolla voidaan käyttää liikelaajuuksia parantavia tekniikoita asiakkaan toiveden mukaan.</p>
-              <ul>
-                <li><p>Urheilu hieronta (30 min)</p> <p>40 €</p></li>
-                <li><p>Urheilu hieronta (45 min)</p> <p>50 €</p></li>
-                <li><p>Urheilu hieronta (60 min)</p> <p>60 €</p></li>
-                <li><p>Urheilu hieronta (75 min)</p> <p>70 €</p></li>
-                <li><p>Urheilu hieronta (90 min)</p> <p>80 €</p></li>
-                <li><p>Urheilu hieronta (120 min)</p> <p>100 €</p></li>
-              </ul>
-              <NavLink to="/reservation" className="button2">
                 Varaa aika!
               </NavLink>
             </div>
@@ -73,12 +56,8 @@ function Services() {
             <h2>Osteopatia</h2>
             <p>Osteopatia on kokonaisvaltainen hoitomuoto, joka keskittyy kehon rakenteen ja toiminnan väliseen yhteyteen.</p>
             <ul>
-              <li><p>Osteopatia (30 min)</p> <p>40 €</p></li>
-              <li><p>Osteopatia (45 min)</p> <p>50 €</p></li>
-              <li><p>Osteopatia (60 min)</p> <p>60 €</p></li>
-              <li><p>Osteopatia (75 min)</p> <p>70 €</p></li>
-              <li><p>Osteopatia (90 min)</p> <p>80 €</p></li>
-              <li><p>Osteopatia (120 min)</p> <p>100 €</p></li>
+              <li><p>Osteopatia (45 min)</p> <p>52 €</p></li>
+              <li><p>Osteopatia (60 min)</p> <p>67 €</p></li>
             </ul>
             <NavLink to="/reservation" className="button1">
               Varaa aika!
