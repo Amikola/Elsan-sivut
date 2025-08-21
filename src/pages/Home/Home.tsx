@@ -21,8 +21,8 @@ function Home() {
         
         <div className="Sports">
           <img src="assets/IMG_7104.jpg" alt="Kuva"></img>
-          <h2>Urheiluhieronta</h2>
-          <p>Urheiluhieronta sopii jokaiselle liikkujalle. Oli sitten tavoitteena palautua menneistä harjoituksista tai ylläpitää liikuntakykyä. Käytän tarvittaessa myös erilaisia erikoistekniikoita.</p>
+          <h2>Osteopatia opiskelijatyönä</h2>
+          <p>Osteopaatti on tuki- ja liikuntaelinvaivojen asiantuntija. Olen toisen vuoden ortopedisen osteopatian opiskelija. Vastaanotolle voi tulla erilaisten TULE-kiputilojen ja vammojen kanssa.</p>
           <NavLink to="/reservation" className="button">Varaa aika!</NavLink>  
         </div>
 
