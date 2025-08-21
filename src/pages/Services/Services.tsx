@@ -15,7 +15,7 @@ function Services() {
     <div>
       <div className="TitleServices">
         <h1>Palvelut</h1>
-        <p>Tarjolla eri pituisia hieronta-aikoja asiakkaan toiveiden mukaan. Valitsen tekniikat aina asiakkaan tarpeiden ja toiveiden perusteella. </p>
+        <p>Tarjolla eri pituisia hieronta -ja osteopatia-aikoja asiakkaan toiveiden mukaan. Valitsen tekniikat aina asiakkaan tarpeiden ja toiveiden perusteella. </p>
       </div>
 
       <div className="tab-buttons">
