@@ -1,22 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Reservation.css';
 
 function Reservation() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/2.8.3/iframeResizer.min.js';
-    script.onload = () => {
-      // @ts-ignore
-      iFrameResize({ checkOrigin: false }, '#reservationIframe60670');
-    };
-    document.body.appendChild(script);
-  }, []);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleIframeLoad = () => {
     setIframeLoaded(true);
+
+    // Set iframe height and width to 100% of the viewport
+    if (iframeRef.current) {
+      iframeRef.current.style.height = `${window.innerHeight}px`;
+      iframeRef.current.style.width = `${window.innerWidth}px`;
+    }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (iframeRef.current) {
+        iframeRef.current.style.height = `${window.innerHeight}px`;
+        iframeRef.current.style.width = `${window.innerWidth}px`;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="reservation-container">
@@ -25,10 +34,10 @@ function Reservation() {
       <div className="reservation-box">
         {!iframeLoaded && <p>Ladataan ajanvaraus järjestelmää. Ole hyvä ja odota.</p>}
         <iframe
-          width="100%"
-          frameBorder="0"
-          src="https://varaa.timma.fi/reservation/hierojaikolaelsa"
-          id="reservationIframe60670"
+          ref={iframeRef}
+          width="50%"
+          height="100%"
+          src="https://www.varaaheti.fi/hoitokeidas/fi"
           onLoad={handleIframeLoad}
         ></iframe>
       </div>

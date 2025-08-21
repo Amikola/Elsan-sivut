@@ -6,12 +6,12 @@ import { useMediaQuery } from 'react-responsive';
 function Home() {
 
   const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
-  // <h1>Tervetuloa hierontaan.</h1>
+  
   return (
     <div>
       <div className="TitleHome">
         <div className="Text">
-        <h1>Hyvää syntymäpäivää!</h1>
+        <h1>Tervetuloa hierontaan!</h1>
         <p>Meiltä saat hierontaa juuri omiin tarpeisiisi, halusit sitten rentoutua, vähentää lihaskipuja, parantaa liikkuvuutta tai palautua nopeammin.</p>
         <NavLink to="/reservation" className="button">Varaa aika!</NavLink>
         </div>
