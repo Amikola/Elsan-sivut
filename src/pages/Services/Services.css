@@ -112,8 +112,43 @@ p {
   background-color: #002244; /* Darken the button on hover */
 }
 
+/* OsteopathicFlow section styles */
+.OsteopathicFlow {
+  margin-top: 2em;
+  text-align: left;
+  background: var(--light-grey, #f7f7f7);
+  border-radius: 8px;
+  padding: 1.5em 1.2em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.OsteopathicFlow h3, .OsteopathicFlow h4 {
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+  color: var(--dark-blue, #002244);
+}
 
+.OsteopathicFlow p {
+  margin-bottom: 1em;
+  font-size: 1.05em;
+  color: #222;
+}
+
+.OsteopathicFlow ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.2em;
+}
+
+.OsteopathicFlow li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  color: #222;
+  list-style: disc inside;
+}
 
 /* Media query for larger screens */
 @media (min-width: 800px) {
@@ -151,6 +186,11 @@ p {
   .button1, .button2 {
     padding: 12px 16px; /* Adjust padding on mobile */
     font-size: 16px; /* Adjust font size on mobile */
+  }
+
+  .OsteopathicFlow {
+    max-width: 100%;
+    padding: 1em 0.5em;
   }
 }
 

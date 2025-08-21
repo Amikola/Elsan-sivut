@@ -62,6 +62,28 @@ function Services() {
             <NavLink to="/reservation" className="button1">
               Varaa aika!
             </NavLink>
+            <div className="OsteopathicFlow">
+              <h3>Vastaanoton kulku:</h3>
+              <p>
+                Hoito aloitetaan perusteellisella alkuhaastattelulla, jossa käydään läpi tulosyy ja terveyshistoria siltä osin kuin se on oleellista nykytilanteeseen. Haastattelun jälkeen tehdään kliininen tutkimus, johon kuuluu aina voimien ja liikeratojen mittaaminen, hermoston toiminnan tutkiminen sekä alueen palpaatio.
+              </p>
+              <p>
+                Tutkimisen jälkeen alkaa hoito. Hoitomuoto valitaan haastattelun ja tutkimusten perusteella. Käytän hoitomuotoina erilaisia manuaalisen terapian tekniikoita (hieronta, mobilisaatio jne.) sekä vahvistavia harjoitteita. Vastaanotolla käydään myös läpi mahdolliset koti-ohjeet ja jatkosuunnitelma.
+              </p>
+              <p>
+                Vastaanotto on aina ihmistä varten ja hoito perustuu kokonaisvaltaiseen hyvinvointiin. Asiakkaan ohjaus on tärkeä osa vastaanottoaikaa. Sen tavoitteena on lisätä ymmärrystä oireesta, sen syistä sekä taustatekijöistä, jotka vaikuttavat oireen kokemiseen. Älä siis epäröi kysyä, jos jokin jää epäselväksi.
+              </p> <br />
+              <h3>Osteopaatin vastaanotolle kannattaa tulla, jos sinulla on:</h3>
+              <ul>
+                <li>• Akuutti tai krooninen kipu</li>
+                <li>• Liikunta- tai rasitusvamma (esim. juoksijan polvi, nilkan nyrjähdys)</li>
+                <li>• Nivelkipuja</li>
+                <li>• Jäykkyyttä nivelissä tai kireyttä kehossa</li>
+                <li>• Hermo-oireita (Esim. sormien puutumista, pistelyä tai tunnon muutoksia)</li>
+                <li>• Leikkauksen jälkeinen tai ennen tapahtuva kuntoutus</li>
+                <li>• Muu ilman leikkausta hoidettavissa oleva TULE-vaiva</li>
+              </ul>
+            </div>
           </div>
         )}
       </div>
