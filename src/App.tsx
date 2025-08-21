@@ -41,9 +41,9 @@ function App() {
             &#9776; {/* Unicode character for hamburger menu */}
           </div>
         )}
-        <a href="/">
-          <img src="assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
-        </a>
+        <NavLink to="/">
+          <img src="/assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
+        </NavLink>
         <ul className={isMobile && menuOpen ? 'show' : ''}>
           <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Etusivu</NavLink>
