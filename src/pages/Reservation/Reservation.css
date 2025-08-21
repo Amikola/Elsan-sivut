@@ -17,6 +17,25 @@ html, body {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
 }
+.reservation-instructions-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.reservation-instructions {
+  background: var(--light-grey);
+  border-radius: 8px;
+  padding: 1rem 2rem; /* Increased padding for more space inside */
+  max-width: 350px;
+  min-width: 220px;
+  flex: 1 1 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  margin: 0;
+}
 
 iframe {
   border: none; /* Removes border for a cleaner look */
@@ -25,4 +44,22 @@ iframe {
 
   max-width: 100%; /* Prevents horizontal overflow */
   max-height: 100%; /* Prevents vertical overflow */
+}
+
+@media (max-width: 900px) {
+  .reservation-instructions-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .reservation-instructions {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 16px;
+    padding: 0.5rem 2rem;
+    box-sizing: border-box;
+  }
 }
