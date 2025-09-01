@@ -6,12 +6,12 @@ import { useMediaQuery } from 'react-responsive';
 function Home() {
 
   const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
-
+  
   return (
     <div>
       <div className="TitleHome">
         <div className="Text">
-        <h1>Tervetuloa hierontaan.</h1>
+        <h1>Tervetuloa hierontaan!</h1>
         <p>Meiltä saat hierontaa juuri omiin tarpeisiisi, halusit sitten rentoutua, vähentää lihaskipuja, parantaa liikkuvuutta tai palautua nopeammin.</p>
         <NavLink to="/reservation" className="button">Varaa aika!</NavLink>
         </div>
@@ -21,8 +21,8 @@ function Home() {
         
         <div className="Sports">
           <img src="assets/IMG_7104.jpg" alt="Kuva"></img>
-          <h2>Urheiluhieronta</h2>
-          <p>Urheiluhieronta sopii jokaiselle liikkujalle. Oli sitten tavoitteena palautua menneistä harjoituksista tai ylläpitää liikuntakykyä. Käytän tarvittaessa myös erilaisia erikoistekniikoita.</p>
+          <h2>Osteopatia opiskelijatyönä</h2>
+          <p>Osteopaatti on tuki- ja liikuntaelinvaivojen asiantuntija. Olen toisen vuoden ortopedisen osteopatian opiskelija. Vastaanotolle voi tulla erilaisten TULE-kiputilojen ja vammojen kanssa.</p>
           <NavLink to="/reservation" className="button">Varaa aika!</NavLink>  
         </div>
 

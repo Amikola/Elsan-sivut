@@ -1,36 +1,65 @@
-import { useEffect, useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Reservation.css';
 
 function Reservation() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/2.8.3/iframeResizer.min.js';
-    script.onload = () => {
-      // @ts-ignore
-      iFrameResize({ checkOrigin: false }, '#reservationIframe60670');
-    };
-    document.body.appendChild(script);
-  }, []);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleIframeLoad = () => {
     setIframeLoaded(true);
+
+    if (iframeRef.current) {
+      iframeRef.current.style.height = `${window.innerHeight}px`;
+      iframeRef.current.style.width = `${window.innerWidth}px`;
+    }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (iframeRef.current) {
+        iframeRef.current.style.height = `${window.innerHeight}px`;
+        iframeRef.current.style.width = `${window.innerWidth}px`;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="reservation-container">
       <h1>Ajanvaraus</h1>
-      <p>Meillä maksutapana käy kortti, mobilepay sekä erilaiset hyvinvointi edut kuten E-passi, Smartum sekä Edenred.</p>
-      <div className="reservation-box">
-        {!iframeLoaded && <p>Ladataan ajanvaraus järjestelmää. Ole hyvä ja odota.</p>}
-        <iframe
-          width="100%"
-          frameBorder="0"
-          src="https://varaa.timma.fi/reservation/hierojaikolaelsa"
-          id="reservationIframe60670"
-          onLoad={handleIframeLoad}
-        ></iframe>
+      <div className="reservation-content-wrapper">
+        <div className="reservation-instructions-wrapper">
+          <div className="reservation-instructions">
+            <p><strong>Ajanvaraus hierontaan</strong></p>
+            <ol>
+              <li>Valitse palveluksi Hieronta</li>
+              <li>Valitse aika</li>
+              <li>Valitse työntekijä (Elsa)</li>
+              <li>Valitse päivämäärä</li>
+            </ol>
+          </div>
+          <div className="reservation-instructions">
+            <p><strong>Ajanvaraus osteopatiaan opiskelijatyönä</strong></p>
+            <ol>
+              <li>Valitse palveluksi Osteopatia</li>
+              <li>Valitse Osteopatia opiskelijatyönä</li>
+              <li>Valitse kesto</li>
+              <li>Valitse päivämäärä</li>
+            </ol>
+          </div>
+        </div>
+        <div className="reservation-box">
+          {!iframeLoaded && <p>Ladataan ajanvaraus järjestelmää. Ole hyvä ja odota.</p>}
+          <iframe
+            ref={iframeRef}
+            width="100%"
+            height="100%"
+            src="https://www.varaaheti.fi/hoitokeidas/fi"
+            onLoad={handleIframeLoad}
+          ></iframe>
+        </div>
       </div>
     </div>
   );
