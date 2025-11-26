@@ -1,0 +1,15 @@
+:root {
+  --white: #ffffff;
+}
+
+/* Ensure page-level white background (use !important only as last resort) */
+html, body {
+  background-color: var(--white) !important;
+  background-image: none !important;
+}
+
+/* safe page wrapper (see TSX change below) */
+.CoinsPage {
+  min-height: 100vh;
+  background-color: var(--white);
+}
