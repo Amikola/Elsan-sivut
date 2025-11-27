@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, NavLink, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Home from './pages/Home/Home';
@@ -12,51 +12,66 @@ import ReservationButton from './components/ReservationButton';
 import ArrivalGuide from './pages/ArrivalGuide/ArrivalGuide';
 import Coins from './pages/Coins/Coins';
 
-function AppInner() {
+function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobile = useMediaQuery({ query: '(max-width: 810px)' });
-  const location = useLocation();
 
-  // list routes that should NOT show navbar / site css
   const hideLayoutRoutes = ['/coins'];
   const hideLayout = hideLayoutRoutes.includes(location.pathname);
 
   useEffect(() => {
-    if (hideLayout) return; // don't load site css on excluded routes
-    if (isMobile) {
+    
+    if (isMobile && !hideLayout) {
+      console.log('Loading Mobile.css');
       import('./Mobile.css');
-    } else {
+    } else if (!hideLayout){
+      console.log('Loading App.css');
       import('./App.css');
     }
-  }, [isMobile, hideLayout]);
+  }, [isMobile]);
 
-  const toggleMenu = () => setMenuOpen(v => !v);
-  const closeMenu = () => setMenuOpen(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <>
-      {!hideLayout && (
-        <nav className={`navbar ${menuOpen ? 'expanded' : ''}`}>
-          {isMobile && (
-            <div className="menu-toggle" onClick={toggleMenu}>
-              &#9776;
-            </div>
-          )}
-          <NavLink to="/">
-            <img src="/assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
-          </NavLink>
-          <ul className={isMobile && menuOpen ? 'show' : ''}>
-            <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Etusivu</NavLink></li>
-            <li><NavLink to="/services" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Palvelut</NavLink></li>
-            <li><NavLink to="/reservation" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Ajanvaraus</NavLink></li>
-            <li><NavLink to="/arrivalguide" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Saapumisohjeet</NavLink></li>
-            <li><NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Meistä</NavLink></li>
-            <li><NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Yhteystiedot</NavLink></li>
-          </ul>
-          <ReservationButton />
-        </nav>
-      )}
+    <Router>
+      <nav className={`navbar ${menuOpen ? 'expanded' : ''}`} style={{ display: hideLayout ? 'none' : 'flex' }}>
+        {isMobile && (
+          <div className="menu-toggle" onClick={toggleMenu}>
+            &#9776; {/* Unicode character for hamburger menu */}
 
+          </div>
+        )}
+        <NavLink to="/">
+          <img src="/assets/IMG_0418.PNG" alt="Logo" className="navbar-image" />
+        </NavLink>
+        <ul className={isMobile && menuOpen ? 'show' : ''}>
+          <li>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Etusivu</NavLink>
+          </li>
+          <li>
+            <NavLink to="/services" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Palvelut</NavLink>
+          </li>
+          <li>
+            <NavLink to="/reservation" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Ajanvaraus</NavLink>
+          </li>
+          <li>
+            <NavLink to="/arrivalguide" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Saapumisohjeet</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Meistä</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Yhteystiedot</NavLink>
+          </li>
+        </ul>
+        <ReservationButton />
+      </nav>
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -70,30 +85,19 @@ function AppInner() {
           <Route path="/coins" element={<Coins />} />
         </Routes>
       </div>
-
-      {!hideLayout && (
-        <div className="bottom-bar">
-          <div className="bottom-bar-text">
-            <NavLink to="/"><img src="/assets/IMG_0418.PNG" alt="Logo" className="bottom-bar-image" /></NavLink>
-            <p>Hieroja Ikola Elsa</p>
-            <a href='https://www.google.com/maps?q=Arolantie+1+As+57+P%C3%B6yt%C3%A4alho,+04410+J%C3%A4rvenp%C3%A4%C3%A4'>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</a>
-            <p>tmi.ikolaelsa@gmail.com</p>
-            <p>0452684099</p>
-          </div>
-          <div className='bottom-bar-links'>
-            <NavLink to="/cancelationpolicy" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Peruutusehdot</NavLink>
-            <a href="https://varaa.timma.fi/dataprotection/hierojaikolaelsa" target="_blank" rel="noopener noreferrer">Tietosuoja</a>
-          </div>
+      <div className="bottom-bar" style={{ display: hideLayout ? 'none' : 'flex' }}>
+        <div className="bottom-bar-text">
+          <NavLink to="/"><img src="assets/IMG_0418.PNG" alt="Logo" className="bottom-bar-image" /></NavLink>
+          <p>Hieroja Ikola Elsa</p>
+          <a href='https://www.google.com/maps?q=Arolantie+1+As+57+P%C3%B6yt%C3%A4alho,+04410+J%C3%A4rvenp%C3%A4%C3%A4'>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</a>
+          <p>tmi.ikolaelsa@gmail.com</p>
+          <p>0452684099</p>
         </div>
-      )}
-    </>
-  );
-}
-
-function App() {
-  return (
-    <Router>
-      <AppInner />
+        <div className='bottom-bar-links'>
+          <NavLink to="/cancelationpolicy" className={({ isActive }) => (isActive ? 'active' : '')} onClick={closeMenu}>Peruutusehdot</NavLink>
+          <a href="https://varaa.timma.fi/dataprotection/hierojaikolaelsa" target="_blank" rel="noopener noreferrer">Tietosuoja</a>
+        </div>
+      </div>
     </Router>
   );
 }
