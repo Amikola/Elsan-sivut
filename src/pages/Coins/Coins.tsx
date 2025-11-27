@@ -28,7 +28,7 @@ function Coins() {
     console.log('Creating user:', username);
 
     try {
-      const res = await fetch(`${API_URL}/`, {
+      const res = await fetch(`${API_URL}/registerUser`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password, token: TOKEN }),
