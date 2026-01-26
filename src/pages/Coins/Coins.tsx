@@ -1,7 +1,5 @@
-// ...existing code...
 import { useState, useEffect } from 'react';
-import {API_URL, TOKEN} from '../../../secrets.tsx';
-
+import { API_URL } from '../../../secrets.tsx';
 import './Coins.css';
 
 declare const process: any;
@@ -13,41 +11,142 @@ function Coins() {
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [bearerToken, setBearerToken] = useState<string | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Add a state for the logged-in username
+  const [loggedInUsername, setLoggedInUsername] = useState<string | null>(null);
+
   useEffect(() => {
-    fetch(`${API_URL}/test`)
-      .then(res => res.json())
-      .then(data => setMessage(data.message || JSON.stringify(data)))
-      .catch(err => setMessage('Fetch failed: ' + String(err)));
+    if (!bearerToken) {
+      const saved = localStorage.getItem('bearerToken');
+      if (saved) setBearerToken(saved);
+    }
   }, []);
 
-  const handleCreateUser = async (e: React.FormEvent) => {
+  useEffect(() => {
+    if (bearerToken) {
+      fetch(`${API_URL}/loginToken`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: bearerToken }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          setMessage(data.message || JSON.stringify(data));
+          if (data.message === "Bearer token valid") {
+            setIsLoggedIn(true);
+            setIsAdmin(!!data.admin);
+            setLoggedInUsername(data.username || null);
+          } else {
+            setIsLoggedIn(false);
+            setIsAdmin(false);
+            setBearerToken(null);
+            setLoggedInUsername(null);
+            localStorage.removeItem('bearerToken');
+          }
+        })
+        .catch(err => setMessage('Fetch failed: ' + String(err)));
+    }
+  }, [bearerToken]);
+
+  // Also set username after login
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setCreating(true);
 
-    console.log('Creating user:', username);
-
     try {
-      const res = await fetch(`${API_URL}/registerUser`, {
+      const res = await fetch(`${API_URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password, token: TOKEN }),
+        body: JSON.stringify({ username, password }),
       });
 
-      const body = await (res.headers.get('content-type')?.includes('json') ? res.json() : res.text());
+      let body: any;
+      const contentType = res.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        body = await res.json();
+      } else {
+        body = await res.text();
+        try {
+          body = JSON.parse(body);
+        } catch {
+          // body remains as text
+        }
+      }
 
       if (!res.ok) {
         setError(typeof body === 'string' ? body : JSON.stringify(body));
+        setIsLoggedIn(false);
+        setBearerToken(null);
+        setLoggedInUsername(null);
+      } else if (typeof body === 'object' && body !== null) {
+        setMessage(`Tervetuloa! ${body.message}. Käyttäjä ID: ${body.userId}.`);
+        setBearerToken(body.token || null);
+        localStorage.setItem('bearerToken', body.token || '');
+        setIsLoggedIn(true);
+        setIsAdmin(!!body.admin);
+        setLoggedInUsername(body.username || null);
+        setError(null);
+        setUsername('');
+        setPassword('');
       } else {
-        setMessage('User created: ' + (body.message || JSON.stringify(body)));
+        setMessage('Kirjautuminen onnistui, mutta vastaus oli odottamaton: ' + String(body));
+        setIsLoggedIn(true);
+        setLoggedInUsername(null);
+        setError(null);
         setUsername('');
         setPassword('');
       }
     } catch (err: any) {
       setError(String(err));
+      setIsLoggedIn(false);
+      setBearerToken(null);
+      setLoggedInUsername(null);
     } finally {
       setCreating(false);
     }
+  };
+
+  const [regUsername, setRegUsername] = useState('');
+  const [regPassword, setRegPassword] = useState('');
+  const [regError, setRegError] = useState<string | null>(null);
+  const [regMessage, setRegMessage] = useState<string | null>(null);
+
+  const handleCreateUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setRegError(null);
+
+    try {
+      const res = await fetch(`${API_URL}/registerUser`, {
+        method: 'POST',
+        body: JSON.stringify({ username: regUsername, password: regPassword, token: bearerToken }),
+      });
+
+      const body = await (res.headers.get('content-type')?.includes('json') ? res.json() : res.text());
+
+      if (!res.ok) {
+        setRegError(typeof body === 'string' ? body : JSON.stringify(body));
+        setRegMessage(null);
+      } else {
+        setRegMessage('User created: ' + (body.message || JSON.stringify(body)));
+        setRegUsername('');
+        setRegPassword('');
+        setRegError(null);
+      }
+    } catch (err: any) {
+      setRegError(String(err));
+      setRegMessage(null);
+    }
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setBearerToken(null);
+    localStorage.removeItem('bearerToken');
+    setMessage('Kirjauduttu ulos.');
   };
 
   return (
@@ -59,43 +158,101 @@ function Coins() {
         <p>{message}</p>
       </section>
 
-      <section className="create-user">
-        <h2>Luo käyttäjä</h2>
-        <form onSubmit={handleCreateUser}>
-          <div>
-            <label>
-              Käyttäjätunnus
-              <input
-                type="text"
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-                required
-                autoComplete="username"
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Salasana
-              <input
-                type="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                required
-                autoComplete="new-password"
-              />
-            </label>
-          </div>
-          <div>
-            <button type="submit" disabled={creating}>
-              {creating ? 'Luo...' : 'Luo käyttäjä'}
+      {!isLoggedIn ? (
+        <section className="login-section">
+          <h2>Kirjaudu sisään</h2>
+          <form onSubmit={handleLogin}>
+            <div>
+              <label>
+                Käyttäjätunnus
+                <input
+                  type="text"
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
+                  required
+                  autoComplete="username"
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Salasana
+                <input
+                  type="password"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  required
+                  autoComplete="current-password"
+                />
+              </label>
+            </div>
+            <div>
+              <button type="submit" disabled={creating}>
+                {creating ? 'Kirjaudu...' : 'Kirjaudu'}
+              </button>
+            </div>
+            {error && <p className="error">Virhe: {error}</p>}
+          </form>
+        </section>
+      ) : isAdmin ? (
+        <section className="register-section">
+          <div style={{ marginBottom: '1em' }}>
+            <strong>Käyttäjä:</strong> {loggedInUsername}
+            <br />
+            <button onClick={handleLogout} style={{ marginTop: '0.5em' }}>
+              Kirjaudu ulos
             </button>
           </div>
-          {error && <p className="error">Virhe: {error}</p>}
-        </form>
-      </section>
+          <h2>Luo käyttäjä</h2>
+          <form onSubmit={handleCreateUser}>
+            <div>
+              <label>
+                Käyttäjätunnus
+                <input
+                  type="text"
+                  value={regUsername}
+                  onChange={e => setRegUsername(e.target.value)}
+                  required
+                  autoComplete="username"
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Salasana
+                <input
+                  type="password"
+                  value={regPassword}
+                  onChange={e => setRegPassword(e.target.value)}
+                  required
+                  autoComplete="new-password"
+                />
+              </label>
+            </div>
+            <div>
+              <button type="submit">
+                Luo käyttäjä
+              </button>
+            </div>
+            {regError && <p className="error">Virhe: {regError}</p>}
+            {regMessage && <p className="success">{regMessage}</p>}
+          </form>
+        </section>
+      ) : (
+        <section>
+          <div style={{ marginBottom: '1em' }}>
+            <strong>Käyttäjä:</strong> {loggedInUsername}
+            <br />
+            <button onClick={handleLogout} style={{ marginTop: '0.5em' }}>
+              Kirjaudu ulos
+            </button>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
 
 export default Coins;
+
+
