@@ -29,16 +29,20 @@ function Coins() {
     if (bearerToken) {
       fetch(`${API_URL}/loginToken`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: bearerToken }),
+        headers: {
+          'Content-Type': 'application/json',
+          ...(bearerToken ? { 'Authorization': `Bearer ${bearerToken}` } : {})
+        },
+        body: JSON.stringify({}),
       })
         .then(res => res.json())
         .then(data => {
           setMessage(data.message || JSON.stringify(data));
           if (data.message === "Bearer token valid") {
             setIsLoggedIn(true);
-            setIsAdmin(!!data.admin);
+            setIsAdmin(data.admin);
             setLoggedInUsername(data.username || null);
+            
           } else {
             setIsLoggedIn(false);
             setIsAdmin(false);
@@ -84,8 +88,17 @@ function Coins() {
         setLoggedInUsername(null);
       } else if (typeof body === 'object' && body !== null) {
         setMessage(`Tervetuloa! ${body.message}. Käyttäjä ID: ${body.userId}.`);
-        setBearerToken(body.token || null);
-        localStorage.setItem('bearerToken', body.token || '');
+        // Get token from Authorization header
+        console.log('Response headers:', res.headers);
+        const authHeader = res.headers.get('Authorization') || res.headers.get('authorization');
+        if (authHeader) {
+          const token = authHeader.replace('Bearer ', '');
+          setBearerToken(token);
+          localStorage.setItem('bearerToken', token);
+        } else {
+          setBearerToken(null);
+          localStorage.removeItem('bearerToken');
+        }
         setIsLoggedIn(true);
         setIsAdmin(!!body.admin);
         setLoggedInUsername(body.username || null);
@@ -122,7 +135,11 @@ function Coins() {
     try {
       const res = await fetch(`${API_URL}/registerUser`, {
         method: 'POST',
-        body: JSON.stringify({ username: regUsername, password: regPassword, token: bearerToken }),
+        headers: {
+          'Content-Type': 'application/json',
+          ...(bearerToken ? { 'Authorization': `Bearer ${bearerToken}` } : {})
+        },
+        body: JSON.stringify({ username: regUsername, password: regPassword }),
       });
 
       const body = await (res.headers.get('content-type')?.includes('json') ? res.json() : res.text());
@@ -143,6 +160,16 @@ function Coins() {
   };
 
   const handleLogout = () => {
+
+    fetch(`${API_URL}/logout`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(bearerToken ? { 'Authorization': `Bearer ${bearerToken}` } : {})
+      },
+      body: JSON.stringify({}),
+    }).catch(err => console.error('Logout fetch failed:', err));
+
     setIsLoggedIn(false);
     setBearerToken(null);
     localStorage.removeItem('bearerToken');
