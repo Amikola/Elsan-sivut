@@ -1,8 +1,8 @@
 # Company website
 
-This is basic website for a company that offers massage services. Application uses typescript and react for the frontend. Website currently has no backend and time reservations are handel by API calls to outside services
+This is basic website for a company that offers massage services and "secret" page that allows users to keep track of their coin collection. Application uses typescript and react for the frontend. Backend is handled by AWS lambda functions and AWS Dynamo db for code is stored in different repo here: https://github.com/Amikola/Elsan_sivut_lambda
 
-This website has been solo deveploment by mean and is not expected to be made public
+This website has been solo deveploment 
 
 # Building 
 
