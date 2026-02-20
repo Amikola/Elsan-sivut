@@ -82,7 +82,7 @@ function App() {
         <div className="bottom-bar-text">
           <NavLink to="/"><img src="assets/IMG_0418.PNG" alt="Logo" className="bottom-bar-image" /></NavLink>
           <p>Hieroja Ikola Elsa</p>
-          <a href='https://www.google.com/maps?q=Arolantie+1+As+57+P%C3%B6yt%C3%A4alho,+04410+J%C3%A4rvenp%C3%A4%C3%A4'>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</a>
+          <a href='https://maps.app.goo.gl/Zj2EVE3Rkr96gQgt6'>Fysiokeidas, Helsingintie 13, 04400 Järvenpää</a>
           <p>tmi.ikolaelsa@gmail.com</p>
           <p>0452684099</p>
         </div>
