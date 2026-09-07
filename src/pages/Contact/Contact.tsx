@@ -11,8 +11,7 @@ function Contact() {
         <h2>Hieroja Ikola Elsa</h2>
         <div className="elsa-data">
           <p>Hieroja Ikola Elsa</p>
-          <a href='https://www.google.com/maps?q=Arolantie+1+As+57+P%C3%B6yt%C3%A4alho,+04410+Järvenpää'>Arolantie 1 As 57 Pöytäalho, 04410 Järvenpää</a>
-          <p>Tulen avaamaan alaoven muutamaa minuuttia ennen aikaasi.</p>
+          <a href='https://maps.app.goo.gl/kGA14droDJYtDrh1A'>Helsingintie 13, 04400 Järvenpää</a>
           <p>tmi.ikolaelsa@gmail.com</p>
           <p>0452684099</p>
         </div>
