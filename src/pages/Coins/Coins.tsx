@@ -190,6 +190,8 @@ function Coins() {
   const [coinError, setCoinError] = useState<string | null>(null);
   const [savingCoin, setSavingCoin] = useState(false);
 
+  const [imageFile, setImageFile] = useState<File | null>(null);
+
   const handleCreateCoin = async (event: React.FormEvent) => {
     event.preventDefault();
     setCoinMessage(null);
@@ -197,6 +199,10 @@ function Coins() {
     setSavingCoin(true);
 
     try {
+      const imageBase64 = imageFile
+        ? await fileToBase64(imageFile)
+        : null;
+
       const response = await fetch(`${API_URL}/createCoin`, {
         method: 'POST',
         headers: {
@@ -207,6 +213,8 @@ function Coins() {
           ...coin,
           year: Number(coin.year),
           quantity: Number(coin.quantity),
+          imageBase64,
+          imageType: imageFile?.type ?? null,
         }),
       });
 
@@ -232,6 +240,20 @@ function Coins() {
       setSavingCoin(false);
     }
   };
+
+  function fileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const result = String(reader.result);
+        resolve(result.split(',')[1] ?? '');
+      };
+
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 
   return (
     <div className="CoinsPage">
@@ -415,6 +437,17 @@ function Coins() {
                 onChange={event =>
                   setCoin({ ...coin, comments: event.target.value })
                 }
+              />
+            </label>
+
+            <label>
+              Coin image
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                onChange={event => {
+                  setImageFile(event.target.files?.[0] ?? null);
+                }}
               />
             </label>
 
