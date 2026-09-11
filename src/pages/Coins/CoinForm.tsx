@@ -25,6 +25,9 @@ const emptyCoin: Coin = {
   comments: '',
 };
 
+const maxImages = 5;
+const maxImageSize = 10 * 1024 * 1024;
+
 function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -180,11 +183,30 @@ function CoinForm({ bearerToken }: CoinFormProps) {
             type="file"
             multiple
             accept="image/jpeg,image/png,image/webp"
-            onChange={event =>
-              setImageFiles(Array.from(event.target.files ?? []))
-            }
+            onChange={event => {
+              const selectedFiles = Array.from(event.target.files ?? []);
+
+              if (selectedFiles.length > maxImages) {
+                setError(`You can select up to ${maxImages} images.`);
+                setImageFiles([]);
+                return;
+              }
+
+              if (selectedFiles.some(file => file.size > maxImageSize)) {
+                setError('Each image must be smaller than 10 MB.');
+                setImageFiles([]);
+                return;
+              }
+
+              setError(null);
+              setImageFiles(selectedFiles);
+            }}
           />
         </label>
+
+        {imageFiles.length > 0 && (
+          <p>{imageFiles.length} image(s) selected</p>
+        )}
 
         <button type="submit" disabled={saving}>
           {saving ? 'Saving...' : 'Add coin'}
