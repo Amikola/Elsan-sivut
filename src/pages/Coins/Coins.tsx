@@ -176,6 +176,63 @@ function Coins() {
     setMessage('Kirjauduttu ulos.');
   };
 
+  const [coin, setCoin] = useState({
+    country: '',
+    coinName: '',
+    denomination: '',
+    currency: '',
+    year: '',
+    quantity: '1',
+    comments: '',
+  });
+
+  const [coinMessage, setCoinMessage] = useState<string | null>(null);
+  const [coinError, setCoinError] = useState<string | null>(null);
+  const [savingCoin, setSavingCoin] = useState(false);
+
+  const handleCreateCoin = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setCoinMessage(null);
+    setCoinError(null);
+    setSavingCoin(true);
+
+    try {
+      const response = await fetch(`${API_URL}/createCoin`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${bearerToken}`,
+        },
+        body: JSON.stringify({
+          ...coin,
+          year: Number(coin.year),
+          quantity: Number(coin.quantity),
+        }),
+      });
+
+      const body = await response.json();
+
+      if (!response.ok) {
+        throw new Error(body.error || 'Coin creation failed');
+      }
+
+      setCoinMessage(`Coin created: ${body.coinId}`);
+      setCoin({
+        country: '',
+        coinName: '',
+        denomination: '',
+        currency: '',
+        year: '',
+        quantity: '1',
+        comments: '',
+      });
+    } catch (error) {
+      setCoinError(error instanceof Error ? error.message : 'Request failed');
+    } finally {
+      setSavingCoin(false);
+    }
+  };
+
   return (
     <div className="CoinsPage">
       <h1>Coins Page</h1>
@@ -274,6 +331,100 @@ function Coins() {
               Kirjaudu ulos
             </button>
           </div>
+        </section>
+      )}
+      {isLoggedIn && (
+        <section className="coin-form-section">
+          <h2>Add coin</h2>
+
+          <form onSubmit={handleCreateCoin}>
+            <label>
+              Country
+              <input
+                value={coin.country}
+                onChange={event =>
+                  setCoin({ ...coin, country: event.target.value })
+                }
+                required
+              />
+            </label>
+
+            <label>
+              Coin name
+              <input
+                value={coin.coinName}
+                onChange={event =>
+                  setCoin({ ...coin, coinName: event.target.value })
+                }
+                required
+              />
+            </label>
+
+            <label>
+              Denomination
+              <input
+                value={coin.denomination}
+                onChange={event =>
+                  setCoin({ ...coin, denomination: event.target.value })
+                }
+                required
+              />
+            </label>
+
+            <label>
+              Currency
+              <input
+                value={coin.currency}
+                onChange={event =>
+                  setCoin({ ...coin, currency: event.target.value })
+                }
+                required
+              />
+            </label>
+
+            <label>
+              Year
+              <input
+                type="number"
+                min="1"
+                value={coin.year}
+                onChange={event =>
+                  setCoin({ ...coin, year: event.target.value })
+                }
+                required
+              />
+            </label>
+
+            <label>
+              Quantity
+              <input
+                type="number"
+                min="1"
+                value={coin.quantity}
+                onChange={event =>
+                  setCoin({ ...coin, quantity: event.target.value })
+                }
+                required
+              />
+            </label>
+
+            <label>
+              Comments
+              <textarea
+                value={coin.comments}
+                onChange={event =>
+                  setCoin({ ...coin, comments: event.target.value })
+                }
+              />
+            </label>
+
+            <button type="submit" disabled={savingCoin}>
+              {savingCoin ? 'Saving...' : 'Add coin'}
+            </button>
+
+            {coinMessage && <p className="success">{coinMessage}</p>}
+            {coinError && <p className="error">{coinError}</p>}
+          </form>
         </section>
       )}
     </div>
