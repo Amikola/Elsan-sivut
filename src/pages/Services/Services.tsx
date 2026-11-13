@@ -59,7 +59,7 @@ function Services() {
               <li><p>Osteopatia (45 min)</p> <p>52 €</p></li>
               <li><p>Osteopatia (60 min)</p> <p>67 €</p></li>
             </ul>
-            <NavLink to="/reservation" className="button1">
+            <NavLink to="" className="button1">
               Varaa aika!
             </NavLink>
             <div className="OsteopathicFlow">

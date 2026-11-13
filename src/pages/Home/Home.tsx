@@ -13,7 +13,7 @@ function Home() {
         <div className="Text">
         <h1>Tervetuloa hierontaan!</h1>
         <p>Meiltä saat hierontaa juuri omiin tarpeisiisi, halusit sitten rentoutua, vähentää lihaskipuja, parantaa liikkuvuutta tai palautua nopeammin.</p>
-        <NavLink to="/reservation" className="button">Varaa aika!</NavLink>
+        <NavLink to="https://www.nordhealth.fi/fi/koulutettu-hieroja/jarvenpaa/elsa-ikola?clinic=jarvenpaan-fysikaalinen-hoitokeidas" className="button">Varaa aika!</NavLink>
         </div>
         <img src="assets/IMG_0418.PNG" alt="Logo"></img>
         </div>
@@ -23,14 +23,14 @@ function Home() {
           <img src="assets/IMG_7104.jpg" alt="Kuva"></img>
           <h2>Osteopatia opiskelijatyönä</h2>
           <p>Osteopaatti on tuki- ja liikuntaelinvaivojen asiantuntija. Olen toisen vuoden ortopedisen osteopatian opiskelija. Vastaanotolle voi tulla erilaisten TULE-kiputilojen ja vammojen kanssa.</p>
-          <NavLink to="/reservation" className="button">Varaa aika!</NavLink>  
+          <NavLink to="https://www.nordhealth.fi/fi/koulutettu-hieroja/jarvenpaa/elsa-ikola?clinic=jarvenpaan-fysikaalinen-hoitokeidas" className="button">Varaa aika!</NavLink>  
         </div>
 
         <div className="Classic">
           <img src="assets/IMG_7094.jpg" alt="Kuva"></img>
           <h2>Klassinen hieronta</h2>
           <p>Klassinen hieronta sopii kaikille jotka haluavat rentoutua. Hieronta tutkitusti vähentää stressiä ja rentouttaa, joten se on oiva myös toimistotyöntekijöille.</p>
-          <NavLink to="/reservation" className="button">Varaa aika!</NavLink>  
+          <NavLink to="https://www.nordhealth.fi/fi/koulutettu-hieroja/jarvenpaa/elsa-ikola?clinic=jarvenpaan-fysikaalinen-hoitokeidas" className="button">Varaa aika!</NavLink>  
         </div>
       </div>
       
